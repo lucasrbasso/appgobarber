@@ -23,7 +23,7 @@
         "prettier"
     ],
     "rules": {
-        "no-console":"off",
+        "camelcase":"off",
         "@typescript-eslint/ban-types":"off",
         "@typescript-eslint/no-non-null-assertion": "off",
         "no-unused-expressions": "off",
