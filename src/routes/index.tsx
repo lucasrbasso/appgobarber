@@ -8,7 +8,6 @@ import AppRoutes from './app.routes';
 
 const Routes: React.FC = () => {
     const { user, loading } = useAuth();
-    console.log(user);
 
     if (loading) {
         return (
