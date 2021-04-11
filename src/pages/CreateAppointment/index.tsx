@@ -111,11 +111,18 @@ const CreateAppointment: React.FC = () => {
                 date: formattedDate,
             });
 
-            navigate('AppointmentCreated', { date: date.getTime() });
+            const { name } = providers.find(
+                provider => provider.id === selectedProvider,
+            );
+
+            navigate('AppointmentCreated', {
+                date: date.getTime(),
+                providerName: name,
+            });
         } catch (err) {
             Alert.alert('Erro ao criar agendamento', `${err}`);
         }
-    }, [navigate, selectedProvider, selectedDate, selectedHour]);
+    }, [navigate, selectedProvider, selectedDate, selectedHour, providers]);
 
     useEffect(() => {
         api.get<AvailabilityItem[]>(
