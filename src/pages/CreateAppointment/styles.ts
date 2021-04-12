@@ -85,6 +85,13 @@ export const ProviderName = styled.Text<ProviderNameProps>`
 
 export const Calendar = styled.View``;
 
+export const DateText = styled.Text`
+    font-family: 'RobotoSlab-Regular';
+    color: #ff9000;
+    font-size: 18px;
+    margin: 0 24px 24px;
+`;
+
 export const Title = styled.Text`
     font-family: 'RobotoSlab-Medium';
     color: #f4ede8;

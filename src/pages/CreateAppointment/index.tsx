@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Platform, Alert } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { format } from 'date-fns';
+import ptBR from 'date-fns/locale/pt-BR';
 
 import DateTimePicker from '@react-native-community/datetimepicker';
 
@@ -23,6 +24,7 @@ import {
     ProviderAvatar,
     ProviderName,
     Calendar,
+    DateText,
     Title,
     OpenDatePickerButton,
     OpenDatePickerButtonText,
@@ -111,13 +113,19 @@ const CreateAppointment: React.FC = () => {
                 date: formattedDate,
             });
 
-            const { name } = providers.find(
+            const providerFind = providers.find(
                 provider => provider.id === selectedProvider,
             );
 
+            if (!providerFind) {
+                throw new Error('Unable to find provider');
+            }
+
+            const providerName = providerFind.name;
+
             navigate('AppointmentCreated', {
                 date: date.getTime(),
-                providerName: name,
+                providerName,
             });
         } catch (err) {
             Alert.alert('Erro ao criar agendamento', `${err}`);
@@ -138,6 +146,18 @@ const CreateAppointment: React.FC = () => {
             setAvailability(response.data);
         });
     }, [selectedDate, selectedProvider]);
+
+    const formattedDate = useMemo(() => {
+        const date = new Date(selectedDate);
+
+        date.setHours(selectedHour);
+        date.setMinutes(0);
+        date.setSeconds(0);
+
+        return format(date, "EEEE', dia' dd 'de' MMMM 'de' yyyy.", {
+            locale: ptBR,
+        });
+    }, [selectedDate, selectedHour]);
 
     const morningAvailability = useMemo(() => {
         return availability
@@ -207,6 +227,7 @@ const CreateAppointment: React.FC = () => {
 
                 <Calendar>
                     <Title>Escolha a data</Title>
+                    <DateText>{formattedDate}</DateText>
                     <OpenDatePickerButton onPress={handleToggleDatePicker}>
                         <OpenDatePickerButtonText>
                             Selecionar outra data
