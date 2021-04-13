@@ -48,7 +48,7 @@ Technologies that I used to develop this mobile client
 ### Requirements
 
 - Have this application's [API](https://github.com/lucasrbasso/goBarber-backend) running
-- - You can follow React Native [tutorial](https://reactnative.dev/docs/getting-started).
+- You can follow the [React Native tutorial](https://reactnative.dev/docs/getting-started).
 
 **Clone the project and access the folder**
 
