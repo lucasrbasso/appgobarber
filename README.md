@@ -52,7 +52,7 @@ Technologies that I used to develop this mobile client
 **Clone the project and access the folder**
 
 ```bash
-$ git clone https://github.com/lucasrbasso/appgobarber.git && cd gobarber-mobile
+$ git clone https://github.com/lucasrbasso/appgobarber.git && cd appgobarber
 ```
 
 **Follow the steps below**
