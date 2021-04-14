@@ -41,7 +41,6 @@ Technologies that I used to develop this mobile client
 - [Axios](https://github.com/axios/axios)
 - [Eslint](https://eslint.org/)
 - [Prettier](https://prettier.io/)
-- [EditorConfig](https://editorconfig.org/)
 
 ## 🔥 Getting started
 
@@ -53,7 +52,7 @@ Technologies that I used to develop this mobile client
 **Clone the project and access the folder**
 
 ```bash
-$ git clone https://github.com/lucasrbasso/appgobarber.git && cd gobarber-mobile
+$ git clone https://github.com/lucasrbasso/appgobarber.git && cd appgobarber
 ```
 
 **Follow the steps below**
@@ -75,4 +74,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-Made with 💜 by Lucas Basso during GoStack Bootcamp - Rocketseat.
+Made with 💜 by Lucas Basso during the GoStack Bootcamp - Rocketseat.
