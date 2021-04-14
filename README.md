@@ -41,7 +41,6 @@ Technologies that I used to develop this mobile client
 - [Axios](https://github.com/axios/axios)
 - [Eslint](https://eslint.org/)
 - [Prettier](https://prettier.io/)
-- [EditorConfig](https://editorconfig.org/)
 
 ## 🔥 Getting started
 
